@@ -1,0 +1,92 @@
+
+.owl-flight {
+  position: fixed;
+  width: clamp(100px, 12vw, 165px);
+  z-index: 60;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    left 0.45s ease-out,
+    top 0.45s ease-out;
+}
+
+.flying-owl {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: owl-floating 1.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 12px rgba(216, 180, 254, 0.6));
+}
+
+.owl-speech {
+  background: white;
+  color: #54217c;
+  padding: 7px 15px;
+  border-radius: 18px 18px 18px 3px;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 0 15px rgba(216, 180, 254, 0.5);
+  margin-bottom: -3px;
+  animation: owl-message 3.5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+.owl-magic-trail {
+  color: #e9c5ff;
+  font-size: 13px;
+  letter-spacing: 5px;
+  animation: owl-sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes owl-floating {
+  0%, 100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-13px) rotate(3deg);
+  }
+}
+
+@keyframes owl-message {
+  0%, 10%, 90%, 100% {
+    opacity: 0.5;
+    transform: translateY(5px) scale(0.9);
+  }
+
+  20%, 80% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes owl-sparkle {
+  0%, 100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .owl-flight {
+    width: 95px;
+  }
+
+  .owl-speech {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flying-owl,
+  .owl-speech,
+  .owl-magic-trail {
+    animation: none;
+  }
+}

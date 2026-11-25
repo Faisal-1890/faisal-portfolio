@@ -1,0 +1,10 @@
+{
+  "name": "Md Faisal Mahmud Portfolio",
+  "short_name": "Faisal Portfolio",
+  "description": "Portfolio of Md Faisal Mahmud, CSE graduate and aspiring IT professional.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#08091f",
+  "theme_color": "#08091f",
+  "icons": []
+}
