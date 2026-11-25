@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Panda logo</title>
+  <desc id="desc">A simple friendly panda face icon in black and white.</desc>
+  <!-- Ears -->
+  <circle cx="31" cy="31" r="20" fill="#171717"/>
+  <circle cx="97" cy="31" r="20" fill="#171717"/>
+  <!-- Face -->
+  <path d="M64 17C38.6 17 19 37.2 19 64.2 19 91.1 38.6 111 64 111s45-19.9 45-46.8C109 37.2 89.4 17 64 17Z" fill="#fff" stroke="#171717" stroke-width="5"/>
+  <!-- Eye patches -->
+  <ellipse cx="44" cy="57" rx="12" ry="16" transform="rotate(20 44 57)" fill="#171717"/>
+  <ellipse cx="84" cy="57" rx="12" ry="16" transform="rotate(-20 84 57)" fill="#171717"/>
+  <!-- Eyes -->
+  <circle cx="47" cy="58" r="4" fill="#fff"/>
+  <circle cx="81" cy="58" r="4" fill="#fff"/>
+  <!-- Nose and mouth -->
+  <path d="M58 75.5c0-3.4 2.7-5.5 6-5.5s6 2.1 6 5.5c0 3.1-2.7 5.2-6 5.2s-6-2.1-6-5.2Z" fill="#171717"/>
+  <path d="M64 81v5.5m0 0c-3.5 5-9 5.8-13 2.1m13-2.1c3.5 5 9 5.8 13 2.1" stroke="#171717" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Soft cheek details -->
+  <path d="M29 77c3 2 6 2.8 9 2.5m61-2.5c-3 2-6 2.8-9 2.5" stroke="#d4d4d4" stroke-width="3" stroke-linecap="round"/>
+</svg>
