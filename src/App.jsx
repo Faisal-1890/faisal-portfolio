@@ -9,6 +9,7 @@ import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import Snowfall from "./components/effects/Snowfall";
 import OwlAnimation from "./components/effects/OwlAnimation";
+import ProfileShowcase from "./components/sections/ProfileShowcase";
 
 // =================================
 // PANDA CHARACTER INFORMATION
@@ -295,12 +296,19 @@ function App() {
         </div>
       </div>
 
+      {/* DEVELOPER PROFILE SHOWCASE */}
+      <ProfileShowcase />
+
       {/* SEARCH-FRIENDLY INTRODUCTION */}
-      <section className="portfolio-intro" aria-labelledby="portfolio-main-heading">
+      <section
+        className="portfolio-intro"
+        aria-labelledby="portfolio-main-heading"
+      >
         <div className="portfolio-intro-content">
           <p className="portfolio-intro-eyebrow">WELCOME TO MY PORTFOLIO</p>
           <h1 id="portfolio-main-heading">
-            Md Faisal Mahmud <span>— CSE Graduate &amp; Aspiring IT Professional</span>
+            Md Faisal Mahmud{" "}
+            <span>— CSE Graduate &amp; Aspiring IT Professional</span>
           </h1>
           <p>
             I am a Computer Science and Engineering graduate from Premier

@@ -35,26 +35,40 @@ function Contact() {
     }));
   };
 
-  // Send Email
+  // Send Email Using EmailJS
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     setSending(true);
+
     setStatus({
       type: "",
       message: "",
     });
 
     try {
-      await emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, {
-        publicKey: "YOUR_PUBLIC_KEY",
+      // Get EmailJS Credentials From Environment Variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      // Check EmailJS Configuration
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS environment variables are missing.");
+      }
+
+      // Send Message
+      await emailjs.send(serviceId, templateId, formData, {
+        publicKey,
       });
 
+      // Success Message
       setStatus({
         type: "success",
         message: "Your message has been sent successfully!",
       });
 
+      // Reset Form
       setFormData({
         from_name: "",
         from_email: "",
@@ -212,7 +226,11 @@ function Contact() {
             {/* Success / Error Message */}
 
             {status.message && (
-              <p className={`contact-status ${status.type}`}>
+              <p
+                className={`contact-status ${status.type}`}
+                role="status"
+                aria-live="polite"
+              >
                 {status.message}
               </p>
             )}

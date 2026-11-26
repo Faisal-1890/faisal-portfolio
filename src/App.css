@@ -83,6 +83,7 @@ button {
   flex-shrink: 0;
 }
 
+
 /* Navbar Brand */
 
 .navbar-brand {
@@ -103,8 +104,43 @@ button {
   white-space: nowrap;
 }
 
-.navbar-brand:hover {
+/* Animated Panda */
+
+.navbar-panda {
+  display: inline-block;
+
+  font-size: 29px;
+  line-height: 1;
+
+  transform-origin: center bottom;
+
+  animation: navbar-panda-float 2s ease-in-out infinite;
+
+  filter: drop-shadow(
+    0 0 8px rgba(255, 212, 138, 0.35)
+  );
+}
+
+/* Click Panda Text */
+
+.navbar-brand-text {
+  transition: color 0.25s ease;
+}
+
+.navbar-brand:hover .navbar-brand-text {
   color: #fff0c5;
+}
+
+/* Panda Floating Animation */
+
+@keyframes navbar-panda-float {
+  0%, 100% {
+    transform: translateY(0) rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(4deg);
+  }
 }
 
 /* Navbar Links */
@@ -2192,4 +2228,122 @@ button {
   color: #d8cce8;
   font-size: clamp(0.98rem, 1.6vw, 1.08rem);
   line-height: 1.8;
+}
+
+.panda-hint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.panda-icon {
+  font-size: 19px;
+  animation: pandaFloat 2s ease-in-out infinite;
+}
+
+@keyframes pandaFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+
+/* =========================================
+   FIX: MOBILE MENU VISIBILITY
+========================================= */
+
+@media (max-width: 800px) {
+  .fantasy-navbar {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+    width: calc(100% - 10px);
+    min-width: 0;
+    padding: 8px 10px;
+  }
+
+  .navbar-brand {
+    display: flex !important;
+    align-items: center;
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: 7px;
+    font-size: 14px;
+  }
+
+  .navbar-panda {
+    display: inline-block !important;
+    flex-shrink: 0;
+    font-size: 25px;
+  }
+
+  .navbar-brand-text {
+    display: inline-block !important;
+    white-space: nowrap;
+  }
+
+  .navbar-menu-button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    flex: 0 0 40px;
+    flex-shrink: 0;
+
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    z-index: 100;
+
+    color: #ffd48a;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-links.active {
+    display: flex !important;
+    z-index: 99;
+  }
+}
+
+@media (max-width: 350px) {
+  .fantasy-navbar {
+    padding: 7px 8px;
+    gap: 5px;
+  }
+
+  .navbar-brand {
+    font-size: 12px;
+    gap: 5px;
+  }
+
+  .navbar-panda {
+    font-size: 22px;
+  }
+
+  .navbar-menu-button {
+    flex-basis: 36px;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+  }
 }
